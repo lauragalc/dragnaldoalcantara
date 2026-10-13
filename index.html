@@ -266,17 +266,67 @@
       <div class="hero-visual" aria-hidden="true">
         <div class="bolha bolha-1"></div>
         <div class="circulo">
-          <svg viewBox="0 0 200 200" width="70%">
-            <g fill="none" stroke-linecap="round">
-              <path d="M100 30 C60 30 40 60 45 90 C30 100 32 130 55 138 C60 160 85 170 100 160 C115 170 140 160 145 138 C168 130 170 100 155 90 C160 60 140 30 100 30 Z" stroke="#006437" stroke-width="4"/>
-              <path d="M100 32 V160" stroke="#006437" stroke-width="3" opacity=".5"/>
-              <path d="M70 60 C80 75 65 85 75 100 M130 60 C120 75 135 85 125 100 M62 115 C75 112 80 125 92 120 M138 115 C125 112 120 125 108 120" stroke="#8CCBE3" stroke-width="4"/>
-              <circle cx="75" cy="100" r="5" fill="#B9A7D9"/>
-              <circle cx="125" cy="100" r="5" fill="#B9A7D9"/>
-              <circle cx="92" cy="120" r="4" fill="#EBA9C4"/>
-              <circle cx="108" cy="120" r="4" fill="#EBA9C4"/>
-              <path d="M100 160 V185" stroke="#006437" stroke-width="4"/>
+          <svg viewBox="40 15 345 310" width="86%" role="img" aria-label="Ilustração anatômica do cérebro em vista lateral">
+            <defs>
+              <radialGradient id="g-cerebro" cx="42%" cy="38%" r="70%">
+                <stop offset="0" stop-color="#FDF6F8"/>
+                <stop offset=".6" stop-color="#F1DCE5"/>
+                <stop offset="1" stop-color="#DDB9C9"/>
+              </radialGradient>
+              <radialGradient id="g-cerebelo" cx="45%" cy="35%" r="75%">
+                <stop offset="0" stop-color="#F3E1E9"/>
+                <stop offset="1" stop-color="#D3ABBE"/>
+              </radialGradient>
+              <linearGradient id="g-tronco" x1="0" x2="1">
+                <stop offset="0" stop-color="#E9D0DB"/>
+                <stop offset="1" stop-color="#D1A9BB"/>
+              </linearGradient>
+            </defs>
+            <!-- Tronco encefálico -->
+            <path d="M218 232 C228 246 236 258 234 282 C232 298 234 310 238 322 L264 322 C259 302 263 286 259 270 C256 256 252 244 250 236 Z" fill="url(#g-tronco)" stroke="#7A4E66" stroke-width="2"/>
+            <path d="M226 250 C234 262 240 268 254 268" fill="none" stroke="#9C6B83" stroke-width="1.4" opacity=".7"/>
+            <!-- Cerebelo -->
+            <path d="M260 228 C290 220 330 214 352 200 C370 214 370 246 346 266 C320 286 280 284 257 268 C243 257 246 238 260 228 Z" fill="url(#g-cerebelo)" stroke="#7A4E66" stroke-width="2.2"/>
+            <g fill="none" stroke="#9C6B83" stroke-width="1.3" stroke-linecap="round" opacity=".85">
+              <path d="M262 236 C292 232 328 224 356 208"/>
+              <path d="M258 245 C292 242 332 234 361 219"/>
+              <path d="M259 254 C295 253 336 245 362 230"/>
+              <path d="M263 262 C298 264 336 256 358 242"/>
+              <path d="M272 270 C304 273 334 266 351 254"/>
+              <path d="M288 277 C312 279 330 274 340 266"/>
             </g>
+            <!-- Cérebro -->
+            <path d="M140 182 C110 186 72 182 62 158 C48 120 70 70 120 48 C175 22 255 22 310 50 C355 74 378 120 368 160 C362 186 345 205 320 212 C300 218 280 222 262 228 C235 240 195 246 165 236 C140 228 122 212 124 198 C125 190 132 185 140 182 Z" fill="url(#g-cerebro)" stroke="#7A4E66" stroke-width="2.6" stroke-linejoin="round"/>
+            <!-- Sulcos principais -->
+            <g fill="none" stroke="#8A5A72" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M140 182 C160 176 178 170 198 166 C220 161 240 156 256 148 C263 144 268 138 270 130"/>
+              <path d="M256 148 C268 150 280 156 288 162"/>
+              <path d="M224 30 C216 50 228 64 216 84 C206 102 214 118 202 136 C196 146 198 154 192 162"/>
+              <path d="M340 64 C346 82 338 98 346 116 C350 128 348 136 356 144"/>
+            </g>
+            <!-- Sulcos secundários -->
+            <g fill="none" stroke="#A97A91" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M194 36 C186 56 198 72 184 92 C174 108 182 124 170 140 C166 148 168 156 164 166"/>
+              <path d="M256 34 C246 54 260 70 246 90 C238 104 246 120 236 134 C232 140 234 146 230 152"/>
+              <path d="M178 66 C160 58 146 72 128 66 C112 62 98 74 86 86"/>
+              <path d="M172 112 C154 104 138 120 118 112 C102 106 88 120 76 132"/>
+              <path d="M146 92 C134 96 124 88 112 94"/>
+              <path d="M110 150 C98 156 86 150 76 160"/>
+              <path d="M134 160 C122 166 112 162 104 170"/>
+              <path d="M150 206 C176 198 204 194 232 188 C256 182 278 180 300 172 C312 168 322 170 330 164"/>
+              <path d="M170 226 C198 222 226 218 252 214 C270 211 286 206 300 202"/>
+              <path d="M262 108 C280 98 298 114 316 102 C330 94 342 100 352 112"/>
+              <path d="M272 70 C290 64 300 78 318 70"/>
+              <path d="M290 132 C304 128 312 140 326 136 C336 133 344 140 352 150"/>
+              <path d="M318 182 C330 176 342 182 354 174"/>
+              <path d="M282 48 C296 56 306 50 318 60"/>
+              <path d="M140 46 C150 52 160 46 170 50"/>
+              <path d="M96 108 C104 98 96 90 104 80"/>
+              <path d="M196 214 C206 208 214 214 224 208"/>
+              <path d="M298 192 C306 186 314 192 322 188"/>
+            </g>
+            <!-- Brilho suave -->
+            <path d="M110 70 C150 42 220 36 270 50" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity=".55"/>
           </svg>
         </div>
         <div class="bolha bolha-2"></div>
