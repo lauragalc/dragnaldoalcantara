@@ -108,13 +108,14 @@
   .cartao:nth-child(3n+1) .cartao-icone { background: var(--azul-claro); }
   .cartao:nth-child(3n+2) .cartao-icone { background: var(--lilas-claro); }
   .cartao:nth-child(3n+3) .cartao-icone { background: var(--rosa-claro); }
-  .cartao h3 { font-size: 19px; margin-bottom: 8px; }
+  .cartao h3 { font-size: 19px; margin-bottom: 4px; }
   .cartao p { font-size: 15px; color: var(--texto-suave); }
   .mais summary { cursor: pointer; font-weight: 600; font-size: 14.5px; color: var(--verde); list-style: none; display: inline-flex; gap: 6px; margin-top: 10px; }
   .mais summary::-webkit-details-marker { display: none; }
   .mais summary::after { content: '▾'; transition: transform .2s; }
   .mais[open] summary::after { transform: rotate(180deg); }
   .mais p { margin-top: 8px; }
+  .mais summary + p { margin-top: 12px; }
   .grade-cartoes { align-items: start; }
 
   /* Sobre */
@@ -131,6 +132,13 @@
   .sobre details[open] summary::after { transform: rotate(180deg); }
   .sobre details[open] summary { margin-bottom: 14px; }
   .sobre details p { color: var(--texto-suave); }
+  .sobre details h3 { font-size: 20px; margin: 22px 0 10px; }
+  .sobre details summary + h3 { margin-top: 4px; }
+  .trajetoria { list-style: none; padding: 0; margin: 18px 0 8px; border-left: 2px solid var(--lilas); }
+  .trajetoria li { position: relative; padding: 0 0 18px 22px; margin: 0; }
+  .trajetoria li::before { content: ''; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--verde); border: 2px solid var(--branco); }
+  .trajetoria .periodo { display: block; font-weight: 600; color: var(--verde-escuro); font-size: 15.5px; margin-bottom: 4px; }
+  .trajetoria p { margin-bottom: 0; }
   .sobre ul { padding-left: 22px; margin-bottom: 14px; }
   .sobre li { margin-bottom: 4px; }
   .levar { margin-top: 22px; padding: 22px 24px; border-radius: var(--raio); background: var(--rosa-claro); border-left: 4px solid var(--rosa); }
@@ -219,38 +227,32 @@
         <article class="cartao">
           <div class="cartao-icone" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006437" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4C8 4 5 7 5.5 10.5 4 12 4.5 15.5 7 16c.5 2.5 3 3.5 5 2.5 2 1 4.5 0 5-2.5 2.5-.5 3-4 1.5-5.5C19 7 16 4 12 4z"/><path d="M12 5v13"/></svg></div>
           <h3>Avaliação neurológica</h3>
-          <p>Investigação de sintomas que podem estar relacionados ao funcionamento do sistema nervoso, como dores de cabeça recorrentes, tonturas, alterações de sensibilidade, formigamentos, perda de força e dificuldades de memória.</p>
-          <details class="mais"><summary>Ler mais</summary><p>A avaliação clínica auxilia na identificação das possíveis causas e na definição dos próximos passos, incluindo acompanhamento, exames complementares ou encaminhamento para outras especialidades, quando necessário.</p></details>
+          <details class="mais"><summary>Saiba mais</summary><p>Investigação de sintomas que podem estar relacionados ao funcionamento do sistema nervoso, como dores de cabeça recorrentes, tonturas, alterações de sensibilidade, formigamentos, perda de força e dificuldades de memória.</p><p>A avaliação clínica auxilia na identificação das possíveis causas e na definição dos próximos passos, incluindo acompanhamento, exames complementares ou encaminhamento para outras especialidades, quando necessário.</p></details>
         </article>
         <article class="cartao">
           <div class="cartao-icone" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006437" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M9 15c1.5-1 4.5-1 6 0"/></svg></div>
           <h3>Dores de cabeça e enxaqueca</h3>
-          <p>Avaliação de dores de cabeça frequentes, persistentes ou que interferem na rotina e na qualidade de vida.</p>
-          <details class="mais"><summary>Ler mais</summary><p>A consulta busca identificar as características da dor, sua frequência, os sintomas associados e os possíveis fatores desencadeantes, diferenciando os quadros mais comuns daqueles que exigem investigação específica. A partir dessa avaliação, é possível orientar a investigação e o tratamento mais adequado para cada caso.</p></details>
+          <details class="mais"><summary>Saiba mais</summary><p>Avaliação de dores de cabeça frequentes, persistentes ou que interferem na rotina e na qualidade de vida.</p><p>A consulta busca identificar as características da dor, sua frequência, os sintomas associados e os possíveis fatores desencadeantes, diferenciando os quadros mais comuns daqueles que exigem investigação específica. A partir dessa avaliação, é possível orientar a investigação e o tratamento mais adequado para cada caso.</p></details>
         </article>
         <article class="cartao">
           <div class="cartao-icone" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006437" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M8 6h8M7 10h10M8 14h8M9 18h6"/></svg></div>
           <h3>Doenças da coluna e compressões nervosas</h3>
-          <p>Avaliação de dores na região cervical e lombar, hérnias de disco, dor irradiada para braços ou pernas, ciática, formigamentos e alterações de força ou sensibilidade.</p>
-          <details class="mais"><summary>Ler mais</summary><p>Esses sintomas podem estar relacionados a alterações na coluna vertebral ou à compressão de estruturas nervosas. A avaliação considera o histórico clínico, o exame físico e os exames de imagem disponíveis para determinar a necessidade de tratamento clínico, acompanhamento especializado ou eventual intervenção cirúrgica.</p></details>
+          <details class="mais"><summary>Saiba mais</summary><p>Avaliação de dores na região cervical e lombar, hérnias de disco, dor irradiada para braços ou pernas, ciática, formigamentos e alterações de força ou sensibilidade.</p><p>Esses sintomas podem estar relacionados a alterações na coluna vertebral ou à compressão de estruturas nervosas. A avaliação considera o histórico clínico, o exame físico e os exames de imagem disponíveis para determinar a necessidade de tratamento clínico, acompanhamento especializado ou eventual intervenção cirúrgica.</p></details>
         </article>
         <article class="cartao">
           <div class="cartao-icone" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006437" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg></div>
           <h3>Memória e funções cognitivas</h3>
-          <p>Investigação de queixas de esquecimento, dificuldades de concentração e outras alterações cognitivas que possam estar associadas a condições neurológicas.</p>
-          <details class="mais"><summary>Ler mais</summary><p>A avaliação considera o início e a evolução dos sintomas, o histórico de saúde e os possíveis impactos nas atividades cotidianas. Quando indicado, podem ser solicitados exames complementares ou avaliações de outras especialidades para esclarecer a origem das alterações.</p></details>
+          <details class="mais"><summary>Saiba mais</summary><p>Investigação de queixas de esquecimento, dificuldades de concentração e outras alterações cognitivas que possam estar associadas a condições neurológicas.</p><p>A avaliação considera o início e a evolução dos sintomas, o histórico de saúde e os possíveis impactos nas atividades cotidianas. Quando indicado, podem ser solicitados exames complementares ou avaliações de outras especialidades para esclarecer a origem das alterações.</p></details>
         </article>
         <article class="cartao">
           <div class="cartao-icone" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006437" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
           <h3>Epilepsia e crises convulsivas</h3>
-          <p>Avaliação de episódios convulsivos, crises recorrentes e alterações de consciência que possam estar relacionadas à epilepsia ou a outras condições neurológicas.</p>
-          <details class="mais"><summary>Ler mais</summary><p>A investigação considera as características dos episódios, o histórico do paciente e os resultados de exames pertinentes, contribuindo para o esclarecimento diagnóstico e a definição da conduta. O acompanhamento é individualizado, conforme as necessidades clínicas de cada paciente.</p></details>
+          <details class="mais"><summary>Saiba mais</summary><p>Avaliação de episódios convulsivos, crises recorrentes e alterações de consciência que possam estar relacionadas à epilepsia ou a outras condições neurológicas.</p><p>A investigação considera as características dos episódios, o histórico do paciente e os resultados de exames pertinentes, contribuindo para o esclarecimento diagnóstico e a definição da conduta. O acompanhamento é individualizado, conforme as necessidades clínicas de cada paciente.</p></details>
         </article>
         <article class="cartao">
           <div class="cartao-icone" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006437" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-2.5z"/></svg></div>
           <h3>Condições neurocirúrgicas</h3>
-          <p>Avaliação de doenças e alterações que possam exigir tratamento neurocirúrgico, incluindo tumores e outras lesões intracranianas, doenças da coluna vertebral e compressões nervosas.</p>
-          <details class="mais"><summary>Ler mais</summary><p>A indicação de cirurgia depende de fatores como o diagnóstico, a gravidade dos sintomas, a evolução clínica e os resultados dos exames. Sempre que possível, são consideradas as alternativas de tratamento, com orientação clara sobre os benefícios, os riscos e os cuidados necessários em cada situação.</p></details>
+          <details class="mais"><summary>Saiba mais</summary><p>Avaliação de doenças e alterações que possam exigir tratamento neurocirúrgico, incluindo tumores e outras lesões intracranianas, doenças da coluna vertebral e compressões nervosas.</p><p>A indicação de cirurgia depende de fatores como o diagnóstico, a gravidade dos sintomas, a evolução clínica e os resultados dos exames. Sempre que possível, são consideradas as alternativas de tratamento, com orientação clara sobre os benefícios, os riscos e os cuidados necessários em cada situação.</p></details>
         </article>
       </div>
     </div>
@@ -265,12 +267,28 @@
       </div>
       <div>
         <h2>Sobre o Dr. Agnaldo</h2>
-        <p>Formado em Medicina pela PUC-Campinas, Dr. Agnaldo Alcantara atua em Limeira desde 1995, com experiência em consultório, ambiente hospitalar e atendimento de pacientes com diferentes condições neurológicas. Ao longo de mais de 30 anos de trajetória profissional, desenvolveu experiência na avaliação de doenças do sistema nervoso e na condução de casos que exigem investigação e acompanhamento especializado.</p>
+        <p>Médico formado pela PUC-Campinas em 1988, Dr. Agnaldo Alcantara é neurocirurgião com mais de 35 anos de experiência e atuação em Limeira desde 1995. É cooperado da Unimed desde o mesmo ano e possui qualificação em Neurocirurgia e Medicina Intensiva.</p>
+        <p>Sua prática é pautada pela avaliação individualizada, orientação clara e cuidado em cada etapa do tratamento.</p>
         <details>
-          <summary>Ler mais</summary>
-          <p>Também possui especialização em Medicina Intensiva, com experiência no atendimento de pacientes em situações clínicas complexas e na assistência hospitalar a casos neurológicos de maior gravidade.</p>
-          <p>Durante a consulta, realiza uma avaliação individualizada, considerando o histórico de saúde, os sintomas apresentados, o exame clínico e os exames complementares disponíveis. O objetivo é esclarecer as possíveis causas do quadro e orientar os próximos passos, que podem incluir tratamento clínico, investigação complementar, acompanhamento periódico ou indicação cirúrgica, quando houver necessidade.</p>
-          <p>Nos casos em que a cirurgia é indicada, o acompanhamento envolve a orientação pré-operatória, o esclarecimento de dúvidas e o seguimento após o procedimento, conforme as necessidades de cada paciente.</p>
+          <summary>Saiba mais</summary>
+          <h3>Uma trajetória de experiência e dedicação</h3>
+          <p>Após concluir a graduação em Medicina, em 1988, realizou quatro anos de residência médica, finalizados em 1992.</p>
+          <ol class="trajetoria">
+            <li>
+              <span class="periodo">1993–1994 | Paranavaí (PR)</span>
+              <p>Atuou como único neurocirurgião da região, realizando consultas, cirurgias e acompanhamento pós-operatório. A experiência também fortaleceu sua atuação no cuidado intensivo de pacientes neurológicos.</p>
+            </li>
+            <li>
+              <span class="periodo">1994–1995 | Caraguatatuba (SP)</span>
+              <p>Prosseguiu sua atuação em neurocirurgia, conciliando atendimentos em consultório e assistência especializada.</p>
+            </li>
+            <li>
+              <span class="periodo">Desde 1995 | Limeira (SP)</span>
+              <p>Estabeleceu-se em Limeira, onde atua até hoje. Em 2001, obteve seu segundo Registro de Qualificação de Especialista (RQE), na área de Medicina Intensiva.</p>
+            </li>
+          </ol>
+          <h3>Cuidado que vai além do diagnóstico</h3>
+          <p>Ao longo de sua trajetória, desenvolveu experiência clínica, cirúrgica e hospitalar, com foco na investigação cuidadosa de cada caso, na orientação clara e na definição de condutas individualizadas, respeitando as necessidades de cada paciente.</p>
         </details>
         <div class="levar">
         <p><strong>Para aproveitar melhor a consulta, leve:</strong></p>
