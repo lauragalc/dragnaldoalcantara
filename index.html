@@ -144,6 +144,24 @@
   .levar { margin-top: 22px; padding: 22px 24px; border-radius: var(--raio); background: var(--rosa-claro); border-left: 4px solid var(--rosa); }
   .levar p:last-child { margin-bottom: 0; }
 
+  /* Avaliações */
+  .avaliacoes { background: var(--lilas-claro); }
+  .avaliacoes .intro { color: var(--texto-suave); margin: -8px 0 28px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .avaliacoes .nota { font-weight: 700; color: var(--texto); }
+  .estrelas { color: #F4B400; letter-spacing: 2px; font-size: 17px; }
+  .depoimentos { columns: 2 300px; column-gap: 16px; }
+  .depoimento { break-inside: avoid; margin: 0 0 16px; padding: 22px 24px; background: var(--branco); border: 1px solid var(--borda); border-radius: var(--raio); }
+  .depoimento blockquote { font-size: 16px; margin: 8px 0 16px; }
+  .depoimento figcaption { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; }
+  .avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--verde-escuro); flex-shrink: 0; }
+  .depoimento:nth-child(3n+1) .avatar { background: var(--azul-claro); }
+  .depoimento:nth-child(3n+2) .avatar { background: var(--rosa-claro); }
+  .depoimento:nth-child(3n+3) .avatar { background: var(--lilas); }
+  .depoimento figcaption small { display: block; font-weight: 400; color: var(--texto-suave); font-size: 13px; }
+  .avaliacoes .acoes { margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-contorno { background: var(--branco); color: var(--verde); border-color: var(--verde); }
+  .btn-contorno:hover { background: var(--azul-claro); }
+
   /* Rodapé */
   footer { background: var(--verde-escuro); color: rgba(255,255,255,.85); padding: 40px 0; font-size: 15px; }
   .rodape { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
@@ -303,9 +321,47 @@
       </div>
     </div>
   </section>
+
+  <!-- 6. AVALIAÇÕES -->
+  <section class="avaliacoes" id="avaliacoes">
+    <div class="container">
+      <h2>O que dizem os pacientes</h2>
+      <p class="intro"><span class="estrelas" aria-hidden="true">★★★★★</span><span><span class="nota">5,0</span> · avaliações de pacientes no Google</span></p>
+      <div class="depoimentos">
+        <figure class="depoimento">
+          <span class="estrelas" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+          <blockquote>Um médico excepcional!! Empático, atencioso, profissional, indico de olhos fechados.</blockquote>
+          <figcaption><span class="avatar" aria-hidden="true">G</span><span>Gi P.<small>Avaliação no Google</small></span></figcaption>
+        </figure>
+        <figure class="depoimento">
+          <span class="estrelas" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+          <blockquote>Eu e o meu marido somos pacientes dele a muito tempo. Gostamos muito dele, um excelente médico!</blockquote>
+          <figcaption><span class="avatar" aria-hidden="true">T</span><span>Teresinha C.<small>Avaliação no Google</small></span></figcaption>
+        </figure>
+        <figure class="depoimento">
+          <span class="estrelas" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+          <blockquote>Dr. Agnaldo é uma profissional maravilhoso. Seu atendimento prestado ao meu esposo foi sem dúvida fundamental, sempre pronto a esclarecer as dúvidas, ajustando as medicações buscando melhorar os sintomas. Agradeço de coração!!!</blockquote>
+          <figcaption><span class="avatar" aria-hidden="true">L</span><span>Luciana P.<small>Avaliação no Google</small></span></figcaption>
+        </figure>
+        <figure class="depoimento">
+          <span class="estrelas" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+          <blockquote>Neurologista meu e que acompanha o meu pai de 90 anos. Sempre fomos muito bem atendidos por ele. Excelente médico e muito atencioso.</blockquote>
+          <figcaption><span class="avatar" aria-hidden="true">C</span><span>Cassiana G.<small>Avaliação no Google</small></span></figcaption>
+        </figure>
+        <figure class="depoimento">
+          <span class="estrelas" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+          <blockquote>O Dr. Agnaldo Alcântara é um dos melhores médicos que conheci. Sua trajetória de plena, ampla e irrestrita dedicação aos pacientes é algo notável nos dias atuais. O amplo conhecimento da área onde atua (Neuro) e a forma de abordagem e análise, somam-se ao perfil humano e de amor que tu tens pelo ser humano. Parabéns, Dr. Agnaldo, o senhor é merecedor do reconhecimento que tens. Continue salvando vidas e nos ajudando a viver melhor.</blockquote>
+          <figcaption><span class="avatar" aria-hidden="true">J</span><span>José Carlos B.<small>Avaliação no Google</small></span></figcaption>
+        </figure>
+      </div>
+      <div class="acoes">
+        <a class="btn btn-contorno" href="https://www.google.com/search?q=Dr.+Agnaldo+Alc%C3%A2ntara+Neurocirurgi%C3%A3o+Limeira" target="_blank" rel="noopener">Ver todas as avaliações no Google</a>
+      </div>
+    </div>
+  </section>
 </main>
 
-<!-- 6. RODAPÉ -->
+<!-- 7. RODAPÉ -->
 <footer>
   <div class="container rodape">
     <div>
