@@ -40,8 +40,7 @@
     "addressCountry": "BR"
   },
   "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "12:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "14:00", "closes": "18:00" }
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00" }
   ]
 }
 </script>
@@ -146,21 +145,27 @@
 
   /* Avaliações */
   .avaliacoes { background: var(--lilas-claro); }
-  .avaliacoes .intro { color: var(--texto-suave); margin: -8px 0 28px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .avaliacoes .intro { color: var(--texto-suave); margin: -8px 0 22px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 15.5px; }
   .avaliacoes .nota { font-weight: 700; color: var(--texto); }
-  .estrelas { color: #F4B400; letter-spacing: 2px; font-size: 17px; }
-  .depoimentos { columns: 2 300px; column-gap: 16px; }
-  .depoimento { break-inside: avoid; margin: 0 0 16px; padding: 22px 24px; background: var(--branco); border: 1px solid var(--borda); border-radius: var(--raio); }
-  .depoimento blockquote { font-size: 16px; margin: 8px 0 16px; }
-  .depoimento figcaption { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; }
-  .avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--verde-escuro); flex-shrink: 0; }
+  .estrelas { color: #F4B400; letter-spacing: 2px; font-size: 14px; }
+  .carrossel { position: relative; }
+  .trilho { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 4px 2px 8px; scrollbar-width: none; }
+  .trilho::-webkit-scrollbar { display: none; }
+  .depoimento { flex: 0 0 270px; scroll-snap-align: start; margin: 0; padding: 18px 20px; background: var(--branco); border: 1px solid var(--borda); border-radius: 14px; display: flex; flex-direction: column; }
+  .depoimento blockquote { font-size: 14.5px; line-height: 1.55; margin: 6px 0 14px; flex: 1; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+  .depoimento.aberto blockquote { -webkit-line-clamp: unset; display: block; }
+  .ler-mais { background: none; border: 0; padding: 0; margin: -8px 0 12px; font: inherit; font-size: 13.5px; font-weight: 600; color: var(--verde); cursor: pointer; align-self: flex-start; }
+  .depoimento figcaption { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; }
+  .avatar { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: var(--verde-escuro); flex-shrink: 0; }
   .depoimento:nth-child(3n+1) .avatar { background: var(--azul-claro); }
   .depoimento:nth-child(3n+2) .avatar { background: var(--rosa-claro); }
   .depoimento:nth-child(3n+3) .avatar { background: var(--lilas); }
-  .depoimento figcaption small { display: block; font-weight: 400; color: var(--texto-suave); font-size: 13px; }
-  .avaliacoes .acoes { margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn-contorno { background: var(--branco); color: var(--verde); border-color: var(--verde); }
-  .btn-contorno:hover { background: var(--azul-claro); }
+  .depoimento figcaption small { display: block; font-weight: 400; color: var(--texto-suave); font-size: 12.5px; }
+  .seta { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--borda); background: var(--branco); color: var(--verde); font-size: 22px; line-height: 1; cursor: pointer; box-shadow: 0 6px 18px rgba(0,69,42,.15); display: flex; align-items: center; justify-content: center; z-index: 2; transition: opacity .2s; }
+  .seta:disabled { opacity: 0; pointer-events: none; }
+  .seta.ant { left: -20px; } .seta.prox { right: -20px; }
+  .ver-todas { display: block; text-align: center; margin-top: 18px; font-weight: 600; font-size: 15.5px; }
+  @media (max-width: 700px) { .seta.ant { left: -6px; } .seta.prox { right: -6px; } .depoimento { flex-basis: 82%; } }
 
   /* Rodapé */
   footer { background: var(--verde-escuro); color: rgba(255,255,255,.85); padding: 40px 0; font-size: 15px; }
@@ -327,7 +332,9 @@
     <div class="container">
       <h2>O que dizem os pacientes</h2>
       <p class="intro"><span class="estrelas" aria-hidden="true">★★★★★</span><span><span class="nota">5,0</span> · avaliações de pacientes no Google</span></p>
-      <div class="depoimentos">
+      <div class="carrossel">
+        <button class="seta ant" type="button" aria-label="Avaliação anterior">‹</button>
+        <div class="trilho" tabindex="0" aria-label="Avaliações de pacientes">
         <figure class="depoimento">
           <span class="estrelas" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
           <blockquote>Um médico excepcional!! Empático, atencioso, profissional, indico de olhos fechados.</blockquote>
@@ -353,10 +360,10 @@
           <blockquote>O Dr. Agnaldo Alcântara é um dos melhores médicos que conheci. Sua trajetória de plena, ampla e irrestrita dedicação aos pacientes é algo notável nos dias atuais. O amplo conhecimento da área onde atua (Neuro) e a forma de abordagem e análise, somam-se ao perfil humano e de amor que tu tens pelo ser humano. Parabéns, Dr. Agnaldo, o senhor é merecedor do reconhecimento que tens. Continue salvando vidas e nos ajudando a viver melhor.</blockquote>
           <figcaption><span class="avatar" aria-hidden="true">J</span><span>José Carlos B.<small>Avaliação no Google</small></span></figcaption>
         </figure>
+        </div>
+        <button class="seta prox" type="button" aria-label="Próxima avaliação">›</button>
       </div>
-      <div class="acoes">
-        <a class="btn btn-contorno" href="https://www.google.com/search?q=Dr.+Agnaldo+Alc%C3%A2ntara+Neurocirurgi%C3%A3o+Limeira" target="_blank" rel="noopener">Ver todas as avaliações no Google</a>
-      </div>
+      <a class="ver-todas" href="https://www.google.com/search?q=Dr.+Agnaldo+Alc%C3%A2ntara+Neurocirurgi%C3%A3o+Limeira" target="_blank" rel="noopener">Veja todas as avaliações no Google →</a>
     </div>
   </section>
 </main>
@@ -366,7 +373,7 @@
   <div class="container rodape">
     <div>
       <p><strong>Telefone:</strong> <a href="tel:+551937046346" data-evento="ligacao-rodape">(19) 3704-6346</a></p>
-      <p><strong>Horário de atendimento:</strong> segunda a sexta-feira, das 8h às 12h e das 14h às 18h.</p>
+      <p><strong>Horário de atendimento:</strong> segunda a sexta-feira, das 8h às 17h.</p>
       <p><strong>Endereço:</strong> Rua Benedito Kuhl, 1031, sala 51 – Ed. Medi Center, Vila Claudia, Limeira – SP, CEP 13480-410 · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Rua+Benedito+Kuhl,+1031,+Limeira+-+SP,+13480-410" target="_blank" rel="noopener">Como chegar</a></p>
     </div>
     <div class="legal">
@@ -387,6 +394,24 @@
       if (window.gtag) window.gtag('event', 'clique_telefone', { origem: evento });
     });
   });
+  // Carrossel de avaliações
+  (function () {
+    var trilho = document.querySelector('.trilho'); if (!trilho) return;
+    var ant = document.querySelector('.seta.ant'), prox = document.querySelector('.seta.prox');
+    function passo() { var c = trilho.querySelector('.depoimento'); return c ? c.offsetWidth + 14 : 280; }
+    function atualiza() { ant.disabled = trilho.scrollLeft < 5; prox.disabled = trilho.scrollLeft + trilho.clientWidth >= trilho.scrollWidth - 5; }
+    ant.addEventListener('click', function () { trilho.scrollBy({ left: -passo() }); });
+    prox.addEventListener('click', function () { trilho.scrollBy({ left: passo() }); });
+    trilho.addEventListener('scroll', atualiza, { passive: true });
+    window.addEventListener('resize', atualiza); atualiza();
+    trilho.querySelectorAll('.depoimento').forEach(function (d) {
+      var q = d.querySelector('blockquote');
+      if (q.scrollHeight <= q.clientHeight + 2) return;
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'ler-mais'; b.textContent = 'Ler mais';
+      b.addEventListener('click', function () { var a = d.classList.toggle('aberto'); b.textContent = a ? 'Ler menos' : 'Ler mais'; });
+      q.after(b);
+    });
+  })();
 </script>
 </body>
 </html>
